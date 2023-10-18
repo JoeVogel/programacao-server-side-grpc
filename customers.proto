@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+// The customer service definition.
+service CustomerService {
+
+	// GetCustomers Procedure
+	rpc GetCustomers (Empty) returns (CustomerList) {}
+
+	// NewCustomer Procedure
+	rpc NewCustomer (NewCustomer) returns (Customer) {}
+
+}
+
+message Empty {}
+
+message NewCustomer {
+	string name = 1;
+	string email = 2;
+}
+
+message Customer {
+   int32 id = 1;
+   string name = 2;
+   string email = 3;
+}
+message CustomerList {
+   repeated Customer customers = 1;
+}
