@@ -1,5 +1,9 @@
 const client = require('./customerService-client')
 
+// // Exemplo de uso
+// addCustomer('John Doe', 'john@example.com')
+// getCustomers()
+
 // Exemplos de utilização das Funções disponibilizadas pelo servidor:
 
 // Lista os clientes
