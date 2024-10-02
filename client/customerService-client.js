@@ -33,4 +33,4 @@ const addCustomer = (name, email) => {
     })
 }
 
-module.exports = client
+module.exports = {getCustomers, addCustomer}

@@ -1,34 +1,12 @@
-const client = require('./customerService-client')
+const {getCustomers, addCustomer} = require('./customerService-client')
 
-// // Exemplo de uso
-// addCustomer('John Doe', 'john@example.com')
-// getCustomers()
+// Exemplo de uso
 
-// Exemplos de utilização das Funções disponibilizadas pelo servidor:
+// Lista todos os clientes
+getCustomers()
 
-// Lista os clientes
-client.getCustomers({}, (error, customers) => {
-	if (!error) {
-        console.log(customers)
-    } else {
-        console.error(error)
-    }
-})
+// Adiciona um cliente
+addCustomer('John Doe', 'john@example.com')
 
-// Solicita a gravação de um novo cliente
-client.newCustomer({name : 'Fulano', email: 'fulano@email.com'}, (error, customer) => {
-	if (!error) {
-		console.log('New customer ' + customer.name + ' saved, id=' + customer.id)
-	} else {
-		console.error(error)
-	}
-})
-
-// Lista os clientes novamente, o cliente cadastrado deve aparecer aqui também
-client.getCustomers({}, (error, customers) => {
-	if (!error) {
-        console.log(customers)
-    } else {
-        console.error(error)
-    }
-})
+// Lista novamente os clientes (note que agora vai aparecer também o cliente revém adicionado)
+getCustomers()
